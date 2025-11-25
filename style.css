@@ -5,8 +5,8 @@
   --cobalt-blue: hsl(234, 85%, 45%);
   --light-slate-blue: hsl(252, 100%, 67%);
   --light-royal-blue: hsl(241, 81%, 54%);
-  --violet-blue: hsl(256, 72%, 46%);
-  --persian-blue: hsl(241, 72%, 46%);
+  --violet-blue: hsla(256, 72%, 46%, 1);
+  --persian-blue: hsla(241, 72%, 46%, 0);
   --white: hsl(0, 0%, 100%);
   --pale-blue: hsl(221, 100%, 96%);
   --light-lavender: hsl(241, 100%, 89%);
@@ -24,6 +24,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
+}
+
+.cards-container {
+  display: flex;
+  height: 500px;
 }
 
 .result-container {
@@ -31,7 +37,6 @@ body {
   flex-direction: column;
   align-items: center;
   width: 380px;
-  height: 500px;
   background: linear-gradient(var(--light-slate-blue), var(--light-royal-blue));
   border-radius: 20px;
   padding: 10px 0 10px 0;
@@ -42,9 +47,49 @@ body {
   color: var(--light-lavender);
 }
 
-.score {
+.score-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   border-radius: 100%;
   height: 200px;
   width: 200px;
   background: linear-gradient(var(--persian-blue), var(--violet-blue));
+}
+
+.circle-text .total-score {
+  font-size: 64px;
+  color: var(--white);
+  font-weight: 800;
+}
+
+.circle-text .max-score {
+  text-align: center;
+  font-weight: 600;
+  color: var(--light-slate-blue);
+}
+
+h1 {
+  color: white;
+  margin-bottom: 0;
+}
+
+.result-description {
+  margin: 0 80px 0 80px;
+  text-align: center;
+  color: var(--light-slate-blue);
+  font-weight: 600;
+}
+
+.summary-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 380px;
+  background-color: white;
+  border-radius: 20px;
+  position: relative;
+  right: 40px;
+  z-index: -999;
 }
